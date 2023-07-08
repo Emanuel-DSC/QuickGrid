@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'models/bottom_nav_model.dart';
 import 'pages/home_page.dart';
 import 'themes/models/theme_models.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => BottomNavigationBarProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,9 +20,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => ModelTheme(),
-      child: Consumer<ModelTheme>(
-          builder: (context, ModelTheme themeNotifier, child) {
+      create: (_) => ThemeProvider(),
+      child: Consumer<ThemeProvider>(
+          builder: (context, ThemeProvider themeNotifier, child) {
         return MaterialApp(
           title: 'Flutter Demo',
           theme: themeNotifier.isDark
@@ -25,10 +32,9 @@ class MyApp extends StatelessWidget {
               : ThemeData(
                   brightness: Brightness.light,
                   primaryColor: Colors.green,
-                  primarySwatch: Colors.green
-                ),
+                  primarySwatch: Colors.green),
           debugShowCheckedModeBanner: false,
-          home:const HomePage(),
+          home: const HomePage(),
         );
       }),
     );
