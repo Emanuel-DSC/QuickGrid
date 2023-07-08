@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/bottom_nav_model.dart';
 import '../themes/models/theme_models.dart';
-import '../widgets/bottom_nav_bar_widget.dart';
 import '../widgets/my_app_bar_widget.dart';
+import '../widgets/my_bottom_nav_bar_widget.dart';
+import '../widgets/my_fab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,15 +36,9 @@ class MyHomePageState extends State<HomePage> {
               );
             }),
         bottomNavigationBar: const MyBottomNavigation(),
-        floatingActionButton: FloatingActionButton(
-  backgroundColor: const Color(0xff03dac6),
-  foregroundColor: Colors.black,
-  onPressed: () {
-    // Respond to button press
-  },
-  child: const Icon(Icons.add),
-)
+        floatingActionButton: const MyFloatingActionButton()
       );
     });
   }
 }
+
