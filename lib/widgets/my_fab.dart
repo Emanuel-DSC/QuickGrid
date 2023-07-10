@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_mercado/models/fab_model.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
   const MyFloatingActionButton({
@@ -8,12 +9,12 @@ class MyFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-  backgroundColor: const Color(0xff03dac6),
-  foregroundColor: Colors.black,
-  onPressed: () {
-    // Respond to button press
-  },
-  child: const Icon(Icons.add),
-);
+      backgroundColor: const Color(0xff03dac6),
+      foregroundColor: Colors.black,
+      onPressed: () {
+        FloatingActionButtonProvider().addItemToList();
+      },
+      child: const Icon(Icons.add),
+    );
   }
 }

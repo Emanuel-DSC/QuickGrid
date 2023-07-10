@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../lists.dart';
 import '../themes/models/theme_models.dart';
+import '../widgets/categories_card_widget.dart';
 import '../widgets/my_app_bar_widget.dart';
 import '../widgets/my_bottom_nav_bar_widget.dart';
 import '../widgets/my_fab.dart';
@@ -18,27 +20,26 @@ class MyHomePageState extends State<HomePage> {
     return Consumer<ThemeProvider>(
         builder: (context, ThemeProvider themeNotifier, child) {
       return Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        appBar: MyAppBar(themeNotifier: themeNotifier),
-        body: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Padding(
-                  padding: EdgeInsets.all(12.0),
-                  child: Text(
-                    "Teste",
-                    style: TextStyle(fontSize: 14),
-                  ),
-                ),
-              );
-            }),
-        bottomNavigationBar: const MyBottomNavigation(),
-        floatingActionButton: const MyFloatingActionButton()
-      );
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
+          appBar: MyAppBar(themeNotifier: themeNotifier),
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 300,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10),
+                itemCount: categorias.length,
+                itemBuilder: (BuildContext context, int index) {
+                  String teste = categorias[index].toString();
+                  return CategoriesCard(
+                    text: teste,
+                  );
+                }),
+          ),
+          bottomNavigationBar: const MyBottomNavigation(),
+          floatingActionButton: const MyFloatingActionButton());
     });
   }
 }
-
