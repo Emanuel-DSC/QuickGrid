@@ -17,4 +17,4 @@ List categorias = [
   'Utensílios para o lar'
 ];
 
-List teste = [];
+List <dynamic> teste = [];

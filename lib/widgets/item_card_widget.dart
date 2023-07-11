@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
-  String text;
-  ItemCard({super.key, required this.text});
+  final String text;
+
+  ItemCard({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.purple,
-        width: 300,
-        height: 200,
-        child: Text(text),
+    return Container(
+      width: 300,
+      height: 200,
+      child: Scaffold(
+        body: Container(
+          color: Colors.purple,
+          child: Center(
+            child: Text(text),
+          ),
+        ),
       ),
     );
   }

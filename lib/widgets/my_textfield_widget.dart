@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class TextFieldWidget extends StatelessWidget {
   final TextInputType keyboardType;
   final String hintText;
+  final TextEditingController controller;
 
   const TextFieldWidget({
     Key? key,
     required this.keyboardType,
     required this.hintText,
+    required this.controller,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController controller = TextEditingController();
-
     return TextField(
       textAlign: TextAlign.center,
       keyboardType: keyboardType,

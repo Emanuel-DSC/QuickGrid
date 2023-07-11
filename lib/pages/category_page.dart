@@ -17,15 +17,14 @@ class _CategoryPageState extends State<CategoryPage> {
       body: Column(
         children: [
           Center(child: Text(widget.name)),
-          SizedBox(
-              height: 300,
-              width: 300,
-              child: ListView.builder(
-                  itemCount: teste.length,
-                  itemBuilder: (BuildContext context, index) {
-                    String name = teste[index].toString();
-                    return ItemCard(text: name);
-                  })),
+          Expanded(
+            child: ListView.builder(
+                itemCount: teste.length,
+                itemBuilder: (BuildContext context, index) {
+                  String name = teste[index].toString();
+                  return ItemCard(text: name);
+                }),
+          ),
         ],
       ),
     );
