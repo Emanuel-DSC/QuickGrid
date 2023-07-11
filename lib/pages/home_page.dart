@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_mercado/services/navigate_to_categories.dart';
 import 'package:provider/provider.dart';
 import '../lists.dart';
 import '../themes/models/theme_models.dart';
@@ -33,9 +34,10 @@ class MyHomePageState extends State<HomePage> {
                 itemCount: categorias.length,
                 itemBuilder: (BuildContext context, int index) {
                   String teste = categorias[index].toString();
-                  return CategoriesCard(onTap: () {
-                    
-                  },
+                  return CategoriesCard(
+                    onTap: () {
+                      navigateToCategoriesPage(context, teste);
+                    },
                     text: teste,
                   );
                 }),
