@@ -33,7 +33,9 @@ class MyHomePageState extends State<HomePage> {
                 itemCount: categorias.length,
                 itemBuilder: (BuildContext context, int index) {
                   String teste = categorias[index].toString();
-                  return CategoriesCard(
+                  return CategoriesCard(onTap: () {
+                    
+                  },
                     text: teste,
                   );
                 }),

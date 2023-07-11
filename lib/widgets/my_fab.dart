@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/models/fab_model.dart';
+import 'package:lista_mercado/pages/add_item_page.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
   const MyFloatingActionButton({
@@ -12,7 +12,9 @@ class MyFloatingActionButton extends StatelessWidget {
       backgroundColor: const Color(0xff03dac6),
       foregroundColor: Colors.black,
       onPressed: () {
-        FloatingActionButtonProvider().addItemToList();
+        Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const AddItem()));
       },
       child: const Icon(Icons.add),
     );
