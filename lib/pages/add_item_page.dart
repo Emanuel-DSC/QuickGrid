@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/models/categories_model.dart';
+import 'package:lista_mercado/pages/home_page.dart';
 import '../constants/padding.dart';
 import '../lists.dart';
 import '../widgets/categories_card_widget.dart';
@@ -73,8 +74,8 @@ class _AddItemState extends State<AddItem> {
                                     controller.text, listaBiscoitosSalgadinhos);
                                 break;
                               case 'Feira':
-                                CategoryProvider().addItemToList(
-                                    controller.text, listaFeira);
+                                CategoryProvider()
+                                    .addItemToList(controller.text, listaFeira);
                                 break;
                               case 'Carnes, Aves e Peixes':
                                 CategoryProvider().addItemToList(
@@ -94,7 +95,8 @@ class _AddItemState extends State<AddItem> {
                                 break;
                               case 'Molhos, Condimentos e Conservas':
                                 CategoryProvider().addItemToList(
-                                    controller.text, listaMolhosCondimentosConservas);
+                                    controller.text,
+                                    listaMolhosCondimentosConservas);
                                 break;
                               case 'Padaria':
                                 CategoryProvider().addItemToList(
@@ -121,13 +123,28 @@ class _AddItemState extends State<AddItem> {
                                     controller.text, listaUtensiliosParaLar);
                                 break;
                               default:
-                            } 
+                            }
                             CategoryProvider().setSelectedCategory(name);
-                            CategoryProvider()
-                                .navigateToCategoriesPage(context, name, );
+                            CategoryProvider().navigateToCategoriesPage(
+                              context,
+                              name,
+                            );
                           });
                     }),
               ),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const HomePage(),
+                  ),
+                ),
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.pink,
+                ),
+              )
             ],
           ),
         ),
