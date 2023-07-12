@@ -38,3 +38,21 @@ List<CategoryItem> listaUtensiliosParaLar = [];
 
 
 
+final Map<String, List<CategoryItem>> categoryMap = {
+    'Alimentos Básicos': listaAlimentosBasicos,
+    'Bebidas': listaBebidas,
+    'Bebidas Alcoólicas': listaBebidasAlcolicas,
+    'Biscoitos e Salgadinhos': listaBiscoitosSalgadinhos,
+    'Feira': listaFeira,
+    'Carnes, Aves e Peixes': listaCarnesAvesPeixes,
+    'Congelados e Resfriados': listaCongeladosResfriados,
+    'Frios e Laticínios': listaFriosLaticinios,
+    'Leites e Iogurtes': listaLeitesIogurtes,
+    'Molhos, Condimentos e Conservas': listaMolhosCondimentosConservas,
+    'Padaria': listaPadaria,
+    'Doces e Sobremesas': listaDocesSobremesas,
+    'Higiene': listaHigiene,
+    'Suplementos e Vitaminas': listaSuplementosVitaminas,
+    'Limpeza': listaLimpeza,
+    'Utensílios para o lar': listaUtensiliosParaLar,
+  };
