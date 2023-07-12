@@ -35,7 +35,7 @@ class MyHomePageState extends State<HomePage> {
                 itemBuilder: (BuildContext context, int index) {
                   String teste = categorias[index].toString();
                   return CategoriesCard(
-                    onTap: () => CategoryServices()
+                    onTap: () => CategoryProvider()
                         .navigateToCategoriesPage(context, teste),
                     text: teste,
                   );

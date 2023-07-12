@@ -17,6 +17,7 @@ class AddItem extends StatefulWidget {
 
 class _AddItemState extends State<AddItem> {
   final TextEditingController controller = TextEditingController();
+  String selectedCategory = '';
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +51,80 @@ class _AddItemState extends State<AddItem> {
                             crossAxisSpacing: 10),
                     itemCount: categorias.length,
                     itemBuilder: (BuildContext context, int index) {
-                      String teste = categorias[index].toString();
+                      String name = categorias[index].toString();
                       return CategoriesCard(
-                          text: teste,
+                          text: name,
                           onTap: () {
-                            CategoryServices().addItemToList(controller.text);
-                            CategoryServices().navigateToCategoriesPage(context, teste);
+                            switch (categorias[index]) {
+                              case 'Alimentos Básicos':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaAlimentosBasicos);
+                                break;
+                              case 'Bebidas':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaBebidas);
+                                break;
+                              case 'Bebidas Alcoólicas':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaBebidasAlcolicas);
+                                break;
+                              case 'Biscoitos e Salgadinhos':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaBiscoitosSalgadinhos);
+                                break;
+                              case 'Feira':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaFeira);
+                                break;
+                              case 'Carnes, Aves e Peixes':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaCarnesAvesPeixes);
+                                break;
+                              case 'Congelados e Resfriados':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaCongeladosResfriados);
+                                break;
+                              case 'Frios e Laticínios':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaFriosLaticinios);
+                                break;
+                              case 'Leites e Iogurtes':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaLeitesIogurtes);
+                                break;
+                              case 'Molhos, Condimentos e Conservas':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaMolhosCondimentosConservas);
+                                break;
+                              case 'Padaria':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaPadaria);
+                                break;
+                              case 'Doces e Sobremesas':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaDocesSobremesas);
+                                break;
+                              case 'Higiene':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaHigiene);
+                                break;
+                              case 'Suplementos e Vitaminas':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaSuplementosVitaminas);
+                                break;
+                              case 'Limpeza':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaLimpeza);
+                                break;
+                              case 'Utensílios para o lar':
+                                CategoryProvider().addItemToList(
+                                    controller.text, listaUtensiliosParaLar);
+                                break;
+                              default:
+                            } 
+                            CategoryProvider().setSelectedCategory(name);
+                            CategoryProvider()
+                                .navigateToCategoriesPage(context, name, );
                           });
                     }),
               ),
