@@ -54,16 +54,17 @@ class _AddItemState extends State<AddItem> {
                     itemBuilder: (BuildContext context, int index) {
                       String name = categorias[index].toString();
                       return CategoriesCard(
-                          text: name,
-                          onTap: () {
-                            if (categoryMap.containsKey(name)) {
-                              CategoryProvider().addItemToList(
-                                controller.text,
-                                categoryMap[name]!,
-                              );
-                              CategoryProvider().setSelectedCategory(name);
-                            }
-                          });
+                        text: name,
+                        onTap: () {
+                          if (categoryMap.containsKey(name)) {
+                            CategoryProvider().addItemToList(
+                              controller.text,
+                              categoryMap[name]!,
+                            );
+                            CategoryProvider().setSelectedCategory(name);
+                          }
+                        },
+                      );
                     }),
               ),
               GestureDetector(
@@ -78,7 +79,7 @@ class _AddItemState extends State<AddItem> {
                   width: 100,
                   color: Colors.pink,
                 ),
-              )
+              ),
             ],
           ),
         ),
