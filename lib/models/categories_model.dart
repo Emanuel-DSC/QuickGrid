@@ -21,10 +21,15 @@ class CategoryProvider extends ChangeNotifier {
     );
   }
 
-
   void addItemToList(String value, List<CategoryItem> list) {
     final item = CategoryItem(name: value, category: selectedCategory);
     list.add(item);
     notifyListeners();
   }
+
+  void checkBoxChanged(bool newBool, int index) {
+  CategoryItem item = CategoryPage.itemList[index];
+  item.completed = newBool;
+}
+
 }

@@ -8,7 +8,7 @@ import '../models/category_item_model.dart';
 
 class CategoryPage extends StatefulWidget {
   final String name;
-  static List<CategoryItem> itemList = []; // Adicione essa variável
+  static List<CategoryItem> itemList = []; 
 
   CategoryPage({Key? key, required this.name}) : super(key: key);
 
@@ -34,7 +34,7 @@ class _CategoryPageState extends State<CategoryPage> {
               itemCount: CategoryPage.itemList.length,
               itemBuilder: (BuildContext context, index) {
                 String name = CategoryPage.itemList[index].name;
-                return ItemCard(text: name);
+                return ItemCard(text: name, index: index);
               },
             ),
           ),
