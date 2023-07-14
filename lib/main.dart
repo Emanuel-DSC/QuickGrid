@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/models/category_item_model.dart';
 import 'package:provider/provider.dart';
 import 'models/bottom_nav_model.dart';
+import 'models/category_item_model.dart';
 import 'pages/home_page.dart';
 import 'themes/models/theme_models.dart';
 
@@ -16,7 +16,7 @@ void main() {
           create: (_) => ThemeProvider(),
         ),
         ChangeNotifierProvider<CategoryItem>(
-          create: (_) => CategoryItem(category: '', name: ''), // Replace CategoryItem with your actual class
+          create: (_) => CategoryItem(category: '', name: ''),
         ),
       ],
       child: const MyApp(),
@@ -24,26 +24,28 @@ void main() {
   );
 }
 
+
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(
-      builder: (context, ThemeProvider themeNotifier, child) {
+      builder: (context, themeNotifier, child) {
         return MaterialApp(
           title: 'Flutter Demo',
           theme: themeNotifier.isDark
-              ? ThemeData(
-                  brightness: Brightness.dark,
-                )
+              ? ThemeData(brightness: Brightness.dark)
               : ThemeData(
                   brightness: Brightness.light,
                   primaryColor: Colors.green,
                   primarySwatch: Colors.green,
                 ),
           debugShowCheckedModeBanner: false,
-          home: const HomePage(),
+          home: ChangeNotifierProvider<CategoryItem>(
+            create: (_) => CategoryItem(category: '', name: ''),
+            child: const HomePage(),
+          ),
         );
       },
     );

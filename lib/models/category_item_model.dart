@@ -1,12 +1,15 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 
 class CategoryItem extends ChangeNotifier {
-  String name;
-  bool completed;
+  final String name;
   final String category;
+  bool completed;
 
-  CategoryItem(
-      {required this.name, this.completed = false, required this.category});
+  CategoryItem({
+    required this.name,
+    required this.category,
+    this.completed = false,
+  });
 
   void toggleCompleted() {
     completed = !completed;

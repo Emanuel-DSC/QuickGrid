@@ -35,8 +35,8 @@ class _CategoryPageState extends State<CategoryPage> {
               itemCount: CategoryPage.itemList.length,
               itemBuilder: (BuildContext context, index) {
                 final item = CategoryPage.itemList[index];
-                return ChangeNotifierProvider<CategoryItem>(
-                  create: (_) => item,
+                return ChangeNotifierProvider<CategoryItem>.value(
+                  value: item,
                   child: ItemCard(text: item.name, index: index),
                 );
               },
