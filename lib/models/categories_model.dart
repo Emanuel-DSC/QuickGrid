@@ -5,6 +5,7 @@ import 'category_item_model.dart';
 
 class CategoryProvider extends ChangeNotifier {
   String selectedCategory = '';
+  List<int> selectedItems = [];
 
   void setSelectedCategory(String category) {
     selectedCategory = category;
@@ -28,8 +29,7 @@ class CategoryProvider extends ChangeNotifier {
   }
 
   void checkBoxChanged(bool newBool, int index) {
-  CategoryItem item = CategoryPage.itemList[index];
-  item.completed = newBool;
-}
-
+    CategoryItem item = CategoryPage.itemList[index];
+    item.completed = newBool;
+  }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:lista_mercado/models/categories_model.dart';
 import 'package:provider/provider.dart';
 
 import '../models/category_item_model.dart';
@@ -8,13 +7,15 @@ import '../models/category_item_model.dart';
 class ItemCard extends StatelessWidget {
   final String text;
   final int index;
-  const ItemCard({Key? key, required this.text, required this.index})
-      : super(key: key);
+
+  const ItemCard({
+    Key? key,
+    required this.text,
+    required this.index,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    bool? isChecked = false;
-
     return Consumer<CategoryItem>(builder: (context, item, child) {
       return Padding(
         padding: const EdgeInsets.only(left: 25.0, right: 25, top: 25),
@@ -38,22 +39,24 @@ class ItemCard extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Checkbox(
-  value: item.completed,
-  onChanged: (value) {
-    item.toggleCompleted();
-  },
-  activeColor: Colors.black,
-),
-
-
+                Consumer<CategoryItem>(
+                  builder: (context, item, child) {
+                    return Checkbox(
+                      value: item.completed,
+                      onChanged: (value) {
+                        item.toggleCompleted();
+                      },
+                      activeColor: Colors.black,
+                    );
+                  },
+                ),
                 Text(
                   text,
-                  // style: TextStyle(
-                  //   decoration: taskCompleted
-                  //       ? TextDecoration.lineThrough
-                  //       : TextDecoration.none,
-                  // ),
+                  style: TextStyle(
+                    decoration: item.completed
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                  ),
                 ),
               ],
             ),
