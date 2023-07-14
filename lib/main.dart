@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'models/bottom_nav_model.dart';
+import 'models/categories_model.dart';
 import 'models/category_item_model.dart';
 import 'pages/home_page.dart';
 import 'themes/models/theme_models.dart';
@@ -17,6 +18,9 @@ void main() {
         ),
         ChangeNotifierProvider<CategoryItem>(
           create: (_) => CategoryItem(category: '', name: ''),
+        ),
+        ChangeNotifierProvider<CategoryProvider>(
+          create: (_) => CategoryProvider(),
         ),
       ],
       child: const MyApp(),

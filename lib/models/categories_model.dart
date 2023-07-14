@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/pages/category_page.dart';
-
 import 'category_item_model.dart';
 
 class CategoryProvider extends ChangeNotifier {
@@ -31,5 +30,10 @@ class CategoryProvider extends ChangeNotifier {
   void checkBoxChanged(bool newBool, int index) {
     CategoryItem item = CategoryPage.itemList[index];
     item.completed = newBool;
+  }
+
+  void deleteTask(int index) {
+    CategoryPage.itemList.removeAt(index);
+    notifyListeners();
   }
 }
