@@ -25,8 +25,6 @@ class _CategoryPageState extends State<CategoryPage> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<CategoryProvider>(context, listen: false);
-
     return Scaffold(
       body: Consumer<CategoryProvider>(
         builder: (context, categoryProvider, child) {
@@ -45,7 +43,7 @@ class _CategoryPageState extends State<CategoryPage> {
                           return ItemCard(
                             text: item.name,
                             index: index,
-                            deleteFunction: () => provider.deleteTask(index),
+                            deleteFunction: () => provider.deleteTask(index, context),
                           );
                         },
                       ),

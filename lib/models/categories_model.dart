@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/pages/category_page.dart';
+import '../widgets/my_alert_dialog.dart';
 import 'category_item_model.dart';
 
 class CategoryProvider extends ChangeNotifier {
@@ -32,8 +33,18 @@ class CategoryProvider extends ChangeNotifier {
     item.completed = newBool;
   }
 
-  void deleteTask(int index) {
-    CategoryPage.itemList.removeAt(index);
-    notifyListeners();
+  void deleteTask(int index, context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return MyAlertDialog(
+            onTap: () => Navigator.of(context).pop(),
+            onTap2: () {
+              CategoryPage.itemList.removeAt(index);
+              Navigator.of(context).pop();
+              notifyListeners();
+            },
+          );
+        });
   }
 }
