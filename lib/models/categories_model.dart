@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lista_mercado/lists.dart';
 import 'package:lista_mercado/pages/category_page.dart';
 import '../widgets/my_alert_dialog.dart';
 import 'category_item_model.dart';

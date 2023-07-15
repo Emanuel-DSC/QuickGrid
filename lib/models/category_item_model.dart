@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../lists.dart';
+
 class CategoryItem extends ChangeNotifier {
   final String name;
   final String category;
@@ -11,8 +13,11 @@ class CategoryItem extends ChangeNotifier {
     this.completed = false,
   });
 
-  void toggleCompleted() {
-    completed = !completed;
+  void toggleCompleted(item) {
+    completed = !completed; 
+    if (completed) {
+      listaFinal.add(item);
+    }
     notifyListeners();
   }
 }

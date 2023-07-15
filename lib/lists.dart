@@ -35,6 +35,7 @@ List<CategoryItem> listaHigiene = [];
 List<CategoryItem> listaSuplementosVitaminas = [];
 List<CategoryItem> listaLimpeza = [];
 List<CategoryItem> listaUtensiliosParaLar = [];
+List<CategoryItem> listaFinal = [];
 
 
 
