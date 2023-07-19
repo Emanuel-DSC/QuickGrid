@@ -54,16 +54,14 @@ class CategoryProvider extends ChangeNotifier {
         });
   }
 
-   // Function to save data to GetStorage
   void saveDataToStorage() {
     final dataToSave = categoryMap.map((key, value) {
-      final listToSave = value.map((item) => item.toJson()).toList();
+      final listToSave = value.map((item) => item.toMap()).toList();
       return MapEntry(key, listToSave);
     });
     _storage.write('categoryMap', dataToSave);
   }
 
-  // Function to load data from GetStorage during app startup
   void loadDataFromStorage() {
     final data = _storage.read('categoryMap');
     if (data != null && data is Map<String, dynamic>) {
