@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../database/database.dart';
 import '../lists.dart';
-import 'categories_model.dart';
 
 class CategoryItem extends ChangeNotifier {
   final String name;
@@ -14,6 +14,9 @@ class CategoryItem extends ChangeNotifier {
     this.completed = false,
   });
 
+  DataBase db = DataBase();
+
+
    void toggleCompleted(item) {
     completed = !completed;
     if (completed) {
@@ -22,7 +25,7 @@ class CategoryItem extends ChangeNotifier {
     notifyListeners();
     
     // Save data to GetStorage whenever the checkbox state changes
-    CategoryProvider().saveDataToStorage();
+    db.saveDataToStorage();
   }
 
   Map<String, dynamic> toMap() {

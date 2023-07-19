@@ -1,7 +1,6 @@
 // category_provider.dart
 import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
-import '../lists.dart';
+import '../database/database.dart';
 import '../pages/category_page.dart';
 import '../widgets/my_alert_dialog.dart';
 import 'category_item_model.dart';
@@ -9,7 +8,7 @@ import 'category_item_model.dart';
 class CategoryProvider extends ChangeNotifier {
   String selectedCategory = '';
   List<int> selectedItems = [];
-  final _storage = GetStorage(); // Initialize GetStorage instance
+  DataBase db = DataBase();
 
   void setSelectedCategory(String category) {
     selectedCategory = category;
@@ -30,7 +29,7 @@ class CategoryProvider extends ChangeNotifier {
     final item = CategoryItem(name: value, category: selectedCategory);
     list.add(item);
     notifyListeners();
-    saveDataToStorage(); // Save data to GetStorage
+    db.saveDataToStorage(); // Save data to GetStorage
   }
 
   void checkBoxChanged(bool newBool, int index) {
@@ -48,32 +47,9 @@ class CategoryProvider extends ChangeNotifier {
               CategoryPage.itemList.removeAt(index);
               Navigator.of(context).pop();
               notifyListeners();
-              saveDataToStorage(); // Save data to GetStorage
+              db.saveDataToStorage(); // Save data to GetStorage
             },
           );
         });
-  }
-
-  void saveDataToStorage() {
-    final dataToSave = categoryMap.map((key, value) {
-      final listToSave = value.map((item) => item.toMap()).toList();
-      return MapEntry(key, listToSave);
-    });
-    _storage.write('categoryMap', dataToSave);
-  }
-
-  void loadDataFromStorage() {
-    final data = _storage.read('categoryMap');
-    if (data != null && data is Map<String, dynamic>) {
-      categoryMap.clear();
-      data.forEach((key, value) {
-        if (value is List<dynamic>) {
-          final itemList = value
-              .map((item) => CategoryItem.fromJson(item))
-              .toList();
-          categoryMap[key] = itemList;
-        }
-      });
-    }
   }
 }
