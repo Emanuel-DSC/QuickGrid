@@ -57,4 +57,29 @@ class CategoryProvider extends ChangeNotifier {
           );
         });
   }
+
+  void reset(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (context) {
+      return MyAlertDialog(
+        onTap: () => Navigator.of(context).pop(),
+        onTap2: () {
+          for (final categoryItems in categoryMap.values) {
+            for (final item in categoryItems) {
+              item.completed = false;
+            }
+          }
+          listaFinal.clear();
+          Navigator.of(context).pop();
+          notifyListeners();
+          db.saveDataToStorage();
+          db.saveListaFinalToStorage();
+          Navigator.of(context).popAndPushNamed('/final_list_page');
+        },
+      );
+    },
+  );
 }
+}
+

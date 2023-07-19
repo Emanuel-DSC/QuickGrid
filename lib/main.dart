@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:lista_mercado/database/database.dart';
+import 'package:lista_mercado/pages/final_list_page.dart';
 import 'package:provider/provider.dart';
 import 'models/bottom_nav_model.dart';
 import 'models/categories_model.dart';
@@ -51,6 +52,9 @@ class MyApp extends StatelessWidget {
                   primarySwatch: Colors.green,
                 ),
           debugShowCheckedModeBanner: false,
+           routes: {
+            '/final_list_page': (context) => const FinalListPage(),
+          },
           home: ChangeNotifierProvider<CategoryItem>(
             create: (_) => CategoryItem(category: '', name: ''),
             child: const HomePage(),
