@@ -1,5 +1,7 @@
 // category_provider.dart
 import 'package:flutter/material.dart';
+import 'package:lista_mercado/lists.dart';
+import 'package:lista_mercado/pages/final_list_page.dart';
 import '../database/database.dart';
 import '../pages/category_page.dart';
 import '../widgets/my_alert_dialog.dart';
@@ -44,10 +46,13 @@ class CategoryProvider extends ChangeNotifier {
           return MyAlertDialog(
             onTap: () => Navigator.of(context).pop(),
             onTap2: () {
+              final itemToRemove = CategoryPage.itemList[index];
               CategoryPage.itemList.removeAt(index);
               Navigator.of(context).pop();
               notifyListeners();
-              db.saveDataToStorage(); // Save data to GetStorage
+              listaFinal.removeWhere((item) => item.name == itemToRemove.name);
+              db.saveDataToStorage();
+              db.saveListaFinalToStorage();
             },
           );
         });

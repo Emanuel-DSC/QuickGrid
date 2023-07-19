@@ -6,7 +6,6 @@ import '../models/category_item_model.dart';
 class DataBase {
   final _storage = GetStorage(); // Initialize GetStorage instance
 
-
   void saveDataToStorage() {
     final dataToSave = categoryMap.map((key, value) {
       final listToSave = value.map((item) => item.toMap()).toList();
@@ -21,12 +20,24 @@ class DataBase {
       categoryMap.clear();
       data.forEach((key, value) {
         if (value is List<dynamic>) {
-          final itemList = value
-              .map((item) => CategoryItem.fromJson(item))
-              .toList();
+          final itemList =
+              value.map((item) => CategoryItem.fromJson(item)).toList();
           categoryMap[key] = itemList;
         }
       });
+    }
+  }
+
+  void saveListaFinalToStorage() {
+    final dataToSave = listaFinal.map((item) => item.toMap()).toList();
+    _storage.write('listaFinal', dataToSave);
+  }
+
+  void loadListaFinalFromStorage() {
+    final data = _storage.read('listaFinal');
+    if (data != null && data is List<dynamic>) {
+      listaFinal.clear();
+      listaFinal.addAll(data.map((item) => CategoryItem.fromJson(item)));
     }
   }
 }

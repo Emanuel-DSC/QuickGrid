@@ -21,10 +21,11 @@ class CategoryItem extends ChangeNotifier {
     completed = !completed;
     if (completed) {
       listaFinal.add(item);
-    }
+    } 
     notifyListeners();
-    
+
     // Save data to GetStorage whenever the checkbox state changes
+    db.saveListaFinalToStorage();
     db.saveDataToStorage();
   }
 
