@@ -1,5 +1,7 @@
+// category_page.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get_storage/get_storage.dart'; // Import GetStorage
 
 import '../lists.dart';
 import '../models/categories_model.dart';
@@ -20,6 +22,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   void initState() {
     super.initState();
+    CategoryProvider().loadDataFromStorage(); // Load data from GetStorage
     CategoryPage.itemList = categoryMap[widget.name] ?? [];
   }
 

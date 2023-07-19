@@ -14,10 +14,27 @@ class CategoryItem extends ChangeNotifier {
   });
 
   void toggleCompleted(item) {
-    completed = !completed; 
+    completed = !completed;
     if (completed) {
       listaFinal.add(item);
     }
     notifyListeners();
+  }
+
+  // Add these methods for JSON serialization and deserialization
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'category': category,
+      'completed': completed,
+    };
+  }
+
+  factory CategoryItem.fromJson(Map<String, dynamic> json) {
+    return CategoryItem(
+      name: json['name'],
+      category: json['category'],
+      completed: json['completed'],
+    );
   }
 }
