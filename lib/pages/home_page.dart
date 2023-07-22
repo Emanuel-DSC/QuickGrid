@@ -28,8 +28,8 @@ class MyHomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(8.0),
             child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 300,
-                    mainAxisSpacing: 10,
+                    maxCrossAxisExtent: 320,
+                    mainAxisSpacing: 30,
                     crossAxisSpacing: 10),
                 itemCount: categorias.length,
                 itemBuilder: (BuildContext context, int index) {

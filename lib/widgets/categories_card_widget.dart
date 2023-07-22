@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:lista_mercado/constants/padding.dart';
 
 class CategoriesCard extends StatelessWidget {
   VoidCallback onTap;
@@ -16,20 +17,27 @@ class CategoriesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: onTap,
-        child: Card(
-          margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 5.0),
-          child: Container(
-            height: 300,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                image: DecorationImage(
-                    fit: BoxFit.cover, image: AssetImage(image))),
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text(text),
+        child: Column(
+          children: [
+            Card(
+              color: Colors.grey[850],
+              elevation: 0,
+              margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 5.0),
+              child: Container(
+                height: 150,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    image: DecorationImage(
+                        fit: BoxFit.fill, image: AssetImage(image))),
+              ),
             ),
-          ),
+            SizedBox(height: kpadding10,),
+             Text(text, 
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontWeight: FontWeight.w700, 
+            fontSize: 14),),
+          ],
         ));
   }
 }
