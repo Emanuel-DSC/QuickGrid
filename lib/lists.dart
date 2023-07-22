@@ -57,3 +57,22 @@ final Map<String, List<CategoryItem>> categoryMap = {
     'Limpeza': listaLimpeza,
     'Utensílios para o lar': listaUtensiliosParaLar,
   };
+
+  List<String> categoryImagePaths = [
+  'assets/menu.png',
+  'assets/soft-drink.png',
+  'assets/liquor.png',
+  'assets/cookie.png',
+  'assets/fruits.png',
+  'assets/meat.png',
+  'assets/fish.png',
+  'assets/dairy-products.png',
+  'assets/yoghurt.png',
+  'assets/mustard.png',
+  'assets/bakery.png',
+  'assets/candy.png',
+  'assets/amenities.png',
+  'assets/vitamin.png',
+  'assets/cleaning.png',
+  'assets/cooking-tools.png',
+];

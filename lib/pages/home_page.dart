@@ -34,10 +34,12 @@ class MyHomePageState extends State<HomePage> {
                 itemCount: categorias.length,
                 itemBuilder: (BuildContext context, int index) {
                   String teste = categorias[index].toString();
+                  String imagePath = categoryImagePaths[index];
                   return CategoriesCard(
                     onTap: () => CategoryProvider()
                         .navigateToCategoriesPage(context, teste),
                     text: teste,
+                    image: imagePath,
                   );
                 }),
           ),

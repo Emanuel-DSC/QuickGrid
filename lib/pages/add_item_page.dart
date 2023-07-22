@@ -53,8 +53,10 @@ class _AddItemState extends State<AddItem> {
                     itemCount: categorias.length,
                     itemBuilder: (BuildContext context, int index) {
                       String name = categorias[index].toString();
+                      String imagePath = categoryImagePaths[index];
                       return CategoriesCard(
                         text: name,
+                        image: imagePath,
                         onTap: () {
                           if (categoryMap.containsKey(name)) {
                             CategoryProvider().addItemToList(
