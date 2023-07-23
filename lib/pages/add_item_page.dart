@@ -33,51 +33,46 @@ class _AddItemState extends State<AddItem> {
           appBar: MyAppBar(themeNotifier: themeNotifier, icon: Icons.arrow_back_ios, title: 'add item'.toUpperCase(),),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: TextFieldWidget(
-                      controller: controller,
-                      keyboardType: TextInputType.name,
-                      hintText: 'Nome do produto',
-                    ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  child: TextFieldWidget(
+                    controller: controller,
+                    keyboardType: TextInputType.name,
+                    hintText: 'Nome do produto',
                   ),
-                  SizedBox(height: kpadding30),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.6,
-                    width: MediaQuery.of(context).size.width,
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                                maxCrossAxisExtent: 320,
-                                mainAxisSpacing: 15,
-                                crossAxisSpacing: 10),
-                        itemCount: categorias.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          String name = categorias[index].toString();
-                          String imagePath = categoryImagePaths[index];
-                          Color color = categoryColors[index];
-                          return CategoriesCard(
-                            text: name,
-                            image: imagePath,
-                            colors: color,
-                            onTap: () {
-                              if (categoryMap.containsKey(name)) {
-                                CategoryProvider().addItemToList(
-                                  controller.text,
-                                  categoryMap[name]!,
-                                );
-                                CategoryProvider().setSelectedCategory(name);
-                              }
-                            },
-                          );
-                        }),
-                  ),
-                  SizedBox(height: kpadding20),
-                ],
-              ),
+                ),
+                SizedBox(height: kpadding30),
+                Expanded(
+                  child: GridView.builder(
+                      gridDelegate:
+                          const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 320,
+                              mainAxisSpacing: 15,
+                              crossAxisSpacing: 10),
+                      itemCount: categorias.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        String name = categorias[index].toString();
+                        String imagePath = categoryImagePaths[index];
+                        Color color = categoryColors[index];
+                        return CategoriesCard(
+                          text: name,
+                          image: imagePath,
+                          colors: color,
+                          onTap: () {
+                            if (categoryMap.containsKey(name)) {
+                              CategoryProvider().addItemToList(
+                                controller.text,
+                                categoryMap[name]!,
+                              );
+                              CategoryProvider().setSelectedCategory(name);
+                            }
+                          },
+                        );
+                      }),
+                ),
+              ],
             ),
           ),
         );
