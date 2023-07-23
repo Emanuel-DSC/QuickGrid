@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:lista_mercado/constants/padding.dart';
 
 class CategoriesCard extends StatelessWidget {
-  VoidCallback onTap;
-  String text;
-  String image;
-  CategoriesCard(
+  final VoidCallback onTap;
+  final String text;
+  final String image;
+  final Color colors;
+
+  const CategoriesCard(
       {super.key,
       required this.text,
       required this.image,
+      required this.colors,
       required this.onTap});
 
   @override
@@ -20,16 +23,19 @@ class CategoriesCard extends StatelessWidget {
         child: Column(
           children: [
             Card(
-              color: Colors.grey[850],
+              color: colors,
               elevation: 0,
               margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 5.0),
-              child: Container(
-                height: 150,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    image: DecorationImage(
-                        fit: BoxFit.fill, image: AssetImage(image))),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 140,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                          fit: BoxFit.fill, image: AssetImage(image))),
+                ),
               ),
             ),
             SizedBox(height: kpadding10,),

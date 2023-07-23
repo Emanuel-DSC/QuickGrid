@@ -54,9 +54,11 @@ class _AddItemState extends State<AddItem> {
                     itemBuilder: (BuildContext context, int index) {
                       String name = categorias[index].toString();
                       String imagePath = categoryImagePaths[index];
+                      Color color = categoryColors[index];
                       return CategoriesCard(
                         text: name,
                         image: imagePath,
+                        colors: color,
                         onTap: () {
                           if (categoryMap.containsKey(name)) {
                             CategoryProvider().addItemToList(
@@ -65,7 +67,7 @@ class _AddItemState extends State<AddItem> {
                             );
                             CategoryProvider().setSelectedCategory(name);
                           }
-                        },
+                        }, 
                       );
                     }),
               ),
