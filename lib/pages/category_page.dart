@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../constants/lists.dart';
 import '../database/database.dart';
-import '../lists.dart';
 import '../models/categories_model.dart';
 import '../models/category_item_model.dart';
 import '../widgets/item_card_widget.dart';

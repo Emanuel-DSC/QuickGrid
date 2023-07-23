@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/lists.dart';
 import 'package:lista_mercado/models/categories_model.dart';
 import 'package:lista_mercado/widgets/item_card_final_list_widget.dart';
 import 'package:lista_mercado/widgets/my_app_bar_widget.dart';
-import 'package:lista_mercado/widgets/my_fab.dart';
 import 'package:provider/provider.dart';
+import '../constants/lists.dart';
 import '../themes/models/theme_models.dart';
 import '../widgets/my_bottom_nav_bar_widget.dart';
 
@@ -21,7 +20,7 @@ class _FinalListPageState extends State<FinalListPage> {
     final themeNotifier = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      appBar: MyAppBar(themeNotifier: themeNotifier),
+      appBar: MyAppBar(themeNotifier: themeNotifier, icon: null, title: 'lista final'.toUpperCase(),),
       body: listaFinal.isEmpty
           ? const Center(
               child: Text('Nenhum item concluído'),

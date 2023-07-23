@@ -25,11 +25,11 @@ class CategoriesCard extends StatelessWidget {
             Card(
               color: colors,
               elevation: 0,
-              margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 5.0),
+              margin: const EdgeInsets.all(10),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
-                  height: 140,
+                  height: 125,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
@@ -38,7 +38,7 @@ class CategoriesCard extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: kpadding10,),
+            SizedBox(height: kpadding5),
              Text(text, 
             textAlign: TextAlign.center,
             style: const TextStyle(fontWeight: FontWeight.w700, 

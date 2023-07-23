@@ -1,6 +1,6 @@
 import 'package:get_storage/get_storage.dart';
 
-import '../lists.dart';
+import '../constants/lists.dart';
 import '../models/category_item_model.dart';
 
 class DataBase {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'models/category_item_model.dart';
+import '../models/category_item_model.dart';
+
 
 List<CategoryItem> listaAlimentosBasicos = [];
 List<CategoryItem> listaBebidas = [];

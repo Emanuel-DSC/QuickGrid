@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../lists.dart';
+import '../constants/lists.dart';
 import '../models/categories_model.dart';
 import '../themes/models/theme_models.dart';
 import '../widgets/categories_card_widget.dart';
@@ -23,7 +23,7 @@ class MyHomePageState extends State<HomePage> {
       return Scaffold(
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
-          appBar: MyAppBar(themeNotifier: themeNotifier),
+          appBar: MyAppBar(themeNotifier: themeNotifier, icon: null, title: 'home'.toUpperCase(),),
           body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: GridView.builder(
@@ -40,7 +40,7 @@ class MyHomePageState extends State<HomePage> {
                     onTap: () => CategoryProvider()
                         .navigateToCategoriesPage(context, teste),
                     text: teste,
-                    image: imagePath, 
+                    image: imagePath,
                     colors: color,
                   );
                 }),

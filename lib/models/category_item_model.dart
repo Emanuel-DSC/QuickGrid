@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/lists.dart';
 import '../database/database.dart';
-import '../lists.dart';
 
 class CategoryItem extends ChangeNotifier {
   final String name;

@@ -1,7 +1,6 @@
 // category_provider.dart
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/lists.dart';
-import 'package:lista_mercado/pages/final_list_page.dart';
+import '../constants/lists.dart';
 import '../database/database.dart';
 import '../pages/category_page.dart';
 import '../widgets/my_alert_dialog.dart';
