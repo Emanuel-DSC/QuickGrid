@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:lista_mercado/database/database.dart';
 import 'package:lista_mercado/pages/final_list_page.dart';
+import 'package:lista_mercado/themes/themes_colors.dart';
 import 'package:provider/provider.dart';
 import 'models/bottom_nav_model.dart';
 import 'models/categories_model.dart';
@@ -45,12 +46,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'Flutter Demo',
           theme: themeNotifier.isDark
-              ? ThemeData(brightness: Brightness.dark)
-              : ThemeData(
-                  brightness: Brightness.light,
-                  primaryColor: Colors.green,
-                  primarySwatch: Colors.green,
-                ),
+              ? MyThemes.darkMode
+              : MyThemes.lightMode,
           debugShowCheckedModeBanner: false,
            routes: {
             '/final_list_page': (context) => const FinalListPage(),

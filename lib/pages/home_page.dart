@@ -21,9 +21,14 @@ class MyHomePageState extends State<HomePage> {
     return Consumer<ThemeProvider>(
         builder: (context, ThemeProvider themeNotifier, child) {
       return Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.background,
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
-          appBar: MyAppBar(themeNotifier: themeNotifier, icon: null, title: 'home'.toUpperCase(),),
+          appBar: MyAppBar(
+            themeNotifier: themeNotifier,
+            icon: null,
+            title: 'home'.toUpperCase(),
+          ),
           body: Padding(
             padding: const EdgeInsets.all(8.0),
             child: GridView.builder(

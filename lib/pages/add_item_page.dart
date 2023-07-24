@@ -30,7 +30,7 @@ class _AddItemState extends State<AddItem> {
       builder: (context, ThemeProvider themeNotifier, child) {
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.background,
-          appBar: MyAppBar(themeNotifier: themeNotifier, icon: Icons.arrow_back_ios, title: 'add item'.toUpperCase(),),
+          appBar: MyAppBar(themeNotifier: themeNotifier, icon: Icons.arrow_back_ios_rounded, title: 'add item'.toUpperCase(),),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(

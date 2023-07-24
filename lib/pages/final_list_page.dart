@@ -20,11 +20,18 @@ class _FinalListPageState extends State<FinalListPage> {
     final themeNotifier = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      appBar: MyAppBar(themeNotifier: themeNotifier, icon: null, title: 'lista final'.toUpperCase(),),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: MyAppBar(
+        themeNotifier: themeNotifier,
+        icon: null,
+        title: 'lista final'.toUpperCase(),
+      ),
       body: listaFinal.isEmpty
           ? const Center(
-              child: Text('Nenhum item concluído'),
-            )
+              child: Text(
+              'Nenhum item concluído',
+              style: TextStyle(fontSize: 28),
+            ))
           : Column(
               children: [
                 Expanded(

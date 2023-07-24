@@ -6,7 +6,9 @@ import '../constants/lists.dart';
 import '../database/database.dart';
 import '../models/categories_model.dart';
 import '../models/category_item_model.dart';
+import '../themes/models/theme_models.dart';
 import '../widgets/item_card_widget.dart';
+import '../widgets/my_app_bar_widget.dart';
 
 class CategoryPage extends StatefulWidget {
   final String name;
@@ -24,42 +26,52 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   void initState() {
     super.initState();
-    db.loadDataFromStorage(); // Load data from GetStorage
+    db.loadDataFromStorage(); 
     CategoryPage.itemList = categoryMap[widget.name] ?? [];
   }
 
   @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeProvider>(context);
+
     return Scaffold(
-      body: Consumer<CategoryProvider>(
-        builder: (context, categoryProvider, child) {
-          return Column(
-            children: [
-              Center(child: Text(widget.name)),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: CategoryPage.itemList.length,
-                  itemBuilder: (BuildContext context, index) {
-                    final item = CategoryPage.itemList[index];
-                    return ChangeNotifierProvider<CategoryItem>.value(
-                      value: item,
-                      child: Consumer<CategoryProvider>(
-                        builder: (context, provider, _) {
-                          return ItemCard(
-                            text: item.name,
-                            index: index,
-                            deleteFunction: () => provider.deleteTask(index, context),
+      backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: MyAppBar(
+        themeNotifier: themeNotifier,
+        icon: Icons.arrow_back_ios_rounded,
+        title: 'lista final'.toUpperCase(),
+      ),
+      body: CategoryPage.itemList.isEmpty
+          ? const Center(child: Text('Nenhum item adicionado', style: TextStyle(fontSize: 28),))
+          : Consumer<CategoryProvider>(
+              builder: (context, categoryProvider, child) {
+                return Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: CategoryPage.itemList.length,
+                        itemBuilder: (BuildContext context, index) {
+                          final item = CategoryPage.itemList[index];
+                          return ChangeNotifierProvider<CategoryItem>.value(
+                            value: item,
+                            child: Consumer<CategoryProvider>(
+                              builder: (context, provider, _) {
+                                return ItemCard(
+                                  text: item.name,
+                                  index: index,
+                                  deleteFunction: () =>
+                                      provider.deleteTask(index, context),
+                                );
+                              },
+                            ),
                           );
                         },
                       ),
-                    );
-                  },
-                ),
-              ),
-            ],
-          );
-        },
-      ),
+                    ),
+                  ],
+                );
+              },
+            ),
     );
   }
 }

@@ -26,7 +26,7 @@ sucessMessage(BuildContext context) {
                     ),
                     Spacer(),
                     Text(
-                      'O item foi adicionado a categoria.',
+                      'Produto adicionado à categoria.',
                       style: TextStyle(
                         fontSize: 15,
                         color: Colors.white,
