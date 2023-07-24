@@ -1,9 +1,10 @@
 // category_provider.dart
 import 'package:flutter/material.dart';
+import 'package:lista_mercado/widgets/flash_card_widget.dart';
 import '../constants/lists.dart';
 import '../database/database.dart';
 import '../pages/category_page.dart';
-import '../widgets/my_alert_dialog.dart';
+import '../widgets/my_alert_dialog_widget.dart';
 import 'category_item_model.dart';
 
 class CategoryProvider extends ChangeNotifier {
@@ -26,11 +27,12 @@ class CategoryProvider extends ChangeNotifier {
     );
   }
 
-  void addItemToList(String value, List<CategoryItem> list) {
+  void addItemToList(String value, List<CategoryItem> list, context) {
     final item = CategoryItem(name: value, category: selectedCategory);
     list.add(item);
     notifyListeners();
-    db.saveDataToStorage(); // Save data to GetStorage
+    db.saveDataToStorage();
+    sucessMessage(context);
   }
 
   void checkBoxChanged(bool newBool, int index) {
@@ -58,27 +60,26 @@ class CategoryProvider extends ChangeNotifier {
   }
 
   void reset(BuildContext context) {
-  showDialog(
-    context: context,
-    builder: (context) {
-      return MyAlertDialog(
-        onTap: () => Navigator.of(context).pop(),
-        onTap2: () {
-          for (final categoryItems in categoryMap.values) {
-            for (final item in categoryItems) {
-              item.completed = false;
+    showDialog(
+      context: context,
+      builder: (context) {
+        return MyAlertDialog(
+          onTap: () => Navigator.of(context).pop(),
+          onTap2: () {
+            for (final categoryItems in categoryMap.values) {
+              for (final item in categoryItems) {
+                item.completed = false;
+              }
             }
-          }
-          listaFinal.clear();
-          Navigator.of(context).pop();
-          notifyListeners();
-          db.saveDataToStorage();
-          db.saveListaFinalToStorage();
-          Navigator.of(context).popAndPushNamed('/final_list_page');
-        },
-      );
-    },
-  );
+            listaFinal.clear();
+            Navigator.of(context).pop();
+            notifyListeners();
+            db.saveDataToStorage();
+            db.saveListaFinalToStorage();
+            Navigator.of(context).popAndPushNamed('/final_list_page');
+          },
+        );
+      },
+    );
+  }
 }
-}
-

@@ -65,6 +65,7 @@ class _AddItemState extends State<AddItem> {
                               CategoryProvider().addItemToList(
                                 controller.text,
                                 categoryMap[name]!,
+                                context
                               );
                               CategoryProvider().setSelectedCategory(name);
                             }
