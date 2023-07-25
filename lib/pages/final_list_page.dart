@@ -5,6 +5,7 @@ import 'package:lista_mercado/widgets/my_app_bar_widget.dart';
 import 'package:provider/provider.dart';
 import '../constants/lists.dart';
 import '../themes/models/theme_models.dart';
+import '../widgets/empty_list_widget.dart';
 import '../widgets/my_bottom_nav_bar_widget.dart';
 
 class FinalListPage extends StatefulWidget {
@@ -26,12 +27,7 @@ class _FinalListPageState extends State<FinalListPage> {
         icon: null,
       ),
       body: listaFinal.isEmpty
-          ? const Center(
-              child: Text(
-              'Nenhum item concluído',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 28),
-            ))
+          ? EmptyPage(text: 'Nenhum item no carrinho')
           : Column(
               children: [
                 Expanded(

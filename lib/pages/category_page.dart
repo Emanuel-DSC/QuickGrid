@@ -7,6 +7,7 @@ import '../database/database.dart';
 import '../models/categories_model.dart';
 import '../models/category_item_model.dart';
 import '../themes/models/theme_models.dart';
+import '../widgets/empty_list_widget.dart';
 import '../widgets/item_card_widget.dart';
 import '../widgets/my_app_bar_widget.dart';
 
@@ -41,7 +42,7 @@ class _CategoryPageState extends State<CategoryPage> {
         icon: Icons.arrow_back_ios_rounded,
       ),
       body: CategoryPage.itemList.isEmpty
-          ? const Center(child: Text('Nenhum item adicionado', style: TextStyle(fontSize: 28),))
+          ? EmptyPage(text: 'Nenhum item adicionado')
           : Consumer<CategoryProvider>(
               builder: (context, categoryProvider, child) {
                 return Column(

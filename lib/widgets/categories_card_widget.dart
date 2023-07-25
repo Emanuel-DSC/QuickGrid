@@ -2,9 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/constants/padding.dart';
-import 'package:provider/provider.dart';
 
-import '../models/categories_model.dart';
 
 class CategoriesCard extends StatelessWidget {
   final VoidCallback onTap;
@@ -22,7 +20,6 @@ class CategoriesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final categorySelectionProvider = Provider.of<CategoryProvider>(context);
     return GestureDetector(
       onTap: onTap,
       child: Column(

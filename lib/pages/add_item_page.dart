@@ -1,14 +1,12 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/models/categories_model.dart';
-import 'package:lista_mercado/pages/home_page.dart';
 import 'package:lista_mercado/themes/models/theme_models.dart';
 import 'package:lista_mercado/widgets/my_app_bar_widget.dart';
 import 'package:provider/provider.dart';
 import '../constants/lists.dart';
 import '../constants/padding.dart';
 import '../widgets/categories_card_widget.dart';
-import '../widgets/my_bottom_nav_bar_widget.dart';
 import '../widgets/my_textfield_widget.dart';
 
 class AddItem extends StatefulWidget {
