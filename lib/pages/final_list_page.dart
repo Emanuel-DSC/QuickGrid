@@ -29,6 +29,7 @@ class _FinalListPageState extends State<FinalListPage> {
           ? const Center(
               child: Text(
               'Nenhum item concluído',
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 28),
             ))
           : Column(

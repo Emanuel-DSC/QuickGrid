@@ -44,6 +44,7 @@ class MyHomePageState extends State<HomePage> {
                         .navigateToCategoriesPage(context, teste),
                     text: teste,
                     image: imagePath,
+                    isVisible: false,
                   );
                 }),
           ),

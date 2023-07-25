@@ -56,6 +56,7 @@ class _AddItemState extends State<AddItem> {
                         String name = categorias[index].toString();
                         String imagePath = categoryImagePaths[index];
                         return CategoriesCard(
+                          isVisible: true,
                           text: name,
                           image: imagePath,
                           onTap: () {

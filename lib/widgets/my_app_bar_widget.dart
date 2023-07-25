@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/pages/home_page.dart';
+import 'package:provider/provider.dart';
 
+import '../models/categories_model.dart';
 import '../themes/models/theme_models.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -14,6 +16,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categoryProvider = Provider.of<CategoryProvider>(context, listen: false);
+
     return AppBar(
       backgroundColor: AppBarTheme.of(context).backgroundColor,
       elevation: 0,
@@ -23,15 +27,18 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           Positioned(
             top: AppBar().preferredSize.height * 1.1,
             child: SizedBox(
-              height: 45,
+              height: 50,
               child: Image.asset('assets/images/white_logo.png'),
             ),
           ),
         ],
-      ),
+      ), 
       leading: GestureDetector(
-          onTap: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomePage())),
+          onTap: () {
+            Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+              categoryProvider.resetSelectedCategory();
+          } ,
           child: Icon(icon, color: Colors.white,)),
       actions: [
         IconButton(

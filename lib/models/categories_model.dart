@@ -14,6 +14,12 @@ class CategoryProvider extends ChangeNotifier {
 
   void setSelectedCategory(String category) {
     selectedCategory = category;
+    notifyListeners();
+  }
+
+  void resetSelectedCategory() {
+    selectedCategory = '';
+    notifyListeners();
   }
 
   void navigateToCategoriesPage(BuildContext context, String name) {
@@ -82,4 +88,5 @@ class CategoryProvider extends ChangeNotifier {
       },
     );
   }
+
 }
