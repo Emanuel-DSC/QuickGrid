@@ -34,7 +34,7 @@ List categorias = [
   'Molhos e Condimentos',
   'Padaria',
   'Doces e Sobremesas',
-  'Higiene',
+  'Higiene Pessoal',
   'Suplementos e Vitaminas',
   'Limpeza',
   'Utensílios para o lar'
@@ -60,22 +60,22 @@ final Map<String, List<CategoryItem>> categoryMap = {
 };
 
 List<String> categoryImagePaths = [
-  'assets/images/menu.png',
-  'assets/images/soft-drink.png',
-  'assets/images/liquor.png',
-  'assets/images/cookie.png',
-  'assets/images/fruits.png',
-  'assets/images/meat.png',
-  'assets/images/fish.png',
-  'assets/images/dairy-products.png',
-  'assets/images/yoghurt.png',
-  'assets/images/mustard.png',
-  'assets/images/bakery.png',
-  'assets/images/candy.png',
-  'assets/images/amenities.png',
-  'assets/images/vitamin.png',
-  'assets/images/cleaning.png',
-  'assets/images/cooking-tools.png',
+  'assets/images/menu.jpg',
+  'assets/images/soft-drink.jpg',
+  'assets/images/liquor.jpg',
+  'assets/images/cookie.jpg',
+  'assets/images/fruits.jpg',
+  'assets/images/meat.jpg',
+  'assets/images/fish.jpg',
+  'assets/images/dairy-products.jpg',
+  'assets/images/yoghurt.jpg',
+  'assets/images/mustard.jpg',
+  'assets/images/bakery.jpg',
+  'assets/images/candy.jpg',
+  'assets/images/amenities.jpg',
+  'assets/images/vitamin.jpg',
+  'assets/images/cleaning.jpg',
+  'assets/images/cooking-tools.jpg',
 ];
 
 List<Color> categoryColors = [
