@@ -59,7 +59,6 @@ class _AddItemState extends State<AddItem> {
                         return CategoriesCard(
                           text: name,
                           image: imagePath,
-                          colors: color,
                           onTap: () {
                             if (categoryMap.containsKey(name)) {
                               CategoryProvider().addItemToList(

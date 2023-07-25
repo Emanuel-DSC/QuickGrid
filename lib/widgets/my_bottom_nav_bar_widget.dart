@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../models/bottom_nav_model.dart';
 import '../pages/final_list_page.dart';
 import '../pages/home_page.dart';
+import 'my_icon_icons.dart';
 
 class MyBottomNavigation extends StatelessWidget {
   const MyBottomNavigation({super.key});
@@ -11,13 +12,16 @@ class MyBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<BottomNavigationBarProvider>(context);
-
+    
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
-      color: Colors.grey[700],
+      color: Theme.of(context).colorScheme.background,
       child: BottomNavigationBar(
         backgroundColor: Colors.transparent,
+        elevation: 0,
         currentIndex: provider.currentScreenIndex,
+        selectedItemColor: const Color(0xFF39b54a),
+        unselectedItemColor: Theme.of(context).colorScheme.tertiary,
         onTap: (index) {
           provider.updateScreenIndex(index);
           switch (index) {
@@ -35,14 +39,14 @@ class MyBottomNavigation extends StatelessWidget {
               break;
           }
         },
-        items: const [
+        items:  [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(MyIcon.home, size: 32),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'List',
+            icon: Icon(MyIcon.list, size: 32,),
+            label: '',
           ),
         ],
       ),

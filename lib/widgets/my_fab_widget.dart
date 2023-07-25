@@ -8,15 +8,29 @@ class MyFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      backgroundColor: const Color(0xff03dac6),
-      foregroundColor: Colors.black,
-      onPressed: () {
-        Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => const AddItem()));
-      },
-      child: const Icon(Icons.add),
-    );
+    return Material(
+        type: MaterialType
+            .transparency, 
+        child: Ink(
+          decoration: BoxDecoration(
+            border: Border.all(color: const Color(0xFF86E494).withOpacity(0.2), width: 4.0),
+            color: const Color(0xFF39b54a),
+            shape: BoxShape.circle,
+          ),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(
+                1000.0), 
+            onTap: () => Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => const AddItem())),
+            child: const Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Icon(
+                Icons.add,
+                size: 30.0,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ));
   }
 }

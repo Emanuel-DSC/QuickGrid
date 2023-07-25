@@ -11,8 +11,8 @@ class MyThemes {
     colorScheme: const ColorScheme.dark(
       background: Colors.white,
       primary: Color(0xFFf7f7f7),
-      secondary: Color(0xFF606060),
-      tertiary: Color(0xFFe6e6e6),
+      secondary: Color(0xFFf5f6fb),
+      tertiary: Color(0xFFcdd2db),
     ),
   );
 
@@ -26,8 +26,8 @@ class MyThemes {
     colorScheme: ColorScheme.dark(
       background: Colors.grey[900]!,
       primary: const Color(0xFF1a1a1a),
-      secondary: Colors.grey[600]!,
-      tertiary: const Color(0xFF2b2b2b),
+      secondary: const Color(0xFFf5f6fb),
+      tertiary: const Color(0xFFcdd2db),
     ),
   );
 }

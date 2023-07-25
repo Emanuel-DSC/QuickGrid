@@ -7,13 +7,11 @@ class CategoriesCard extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
   final String image;
-  final Color colors;
 
   const CategoriesCard(
       {super.key,
       required this.text,
       required this.image,
-      required this.colors,
       required this.onTap});
 
   @override
@@ -23,7 +21,7 @@ class CategoriesCard extends StatelessWidget {
         child: Column(
           children: [
             Card(
-              color: colors,
+              color: Theme.of(context).colorScheme.secondary,
               elevation: 0,
               margin: const EdgeInsets.all(10),
               child: Padding(

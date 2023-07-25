@@ -34,19 +34,17 @@ class MyHomePageState extends State<HomePage> {
             child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 320,
-                    mainAxisSpacing: 30,
+                    mainAxisSpacing: 10,
                     crossAxisSpacing: 10),
                 itemCount: categorias.length,
                 itemBuilder: (BuildContext context, int index) {
                   String teste = categorias[index].toString();
                   String imagePath = categoryImagePaths[index];
-                  Color color = categoryColors[index];
                   return CategoriesCard(
                     onTap: () => CategoryProvider()
                         .navigateToCategoriesPage(context, teste),
                     text: teste,
                     image: imagePath,
-                    colors: color,
                   );
                 }),
           ),

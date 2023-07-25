@@ -60,22 +60,22 @@ final Map<String, List<CategoryItem>> categoryMap = {
 };
 
 List<String> categoryImagePaths = [
-  'assets/menu.png',
-  'assets/soft-drink.png',
-  'assets/liquor.png',
-  'assets/cookie.png',
-  'assets/fruits.png',
-  'assets/meat.png',
-  'assets/fish.png',
-  'assets/dairy-products.png',
-  'assets/yoghurt.png',
-  'assets/mustard.png',
-  'assets/bakery.png',
-  'assets/candy.png',
-  'assets/amenities.png',
-  'assets/vitamin.png',
-  'assets/cleaning.png',
-  'assets/cooking-tools.png',
+  'assets/images/menu.png',
+  'assets/images/soft-drink.png',
+  'assets/images/liquor.png',
+  'assets/images/cookie.png',
+  'assets/images/fruits.png',
+  'assets/images/meat.png',
+  'assets/images/fish.png',
+  'assets/images/dairy-products.png',
+  'assets/images/yoghurt.png',
+  'assets/images/mustard.png',
+  'assets/images/bakery.png',
+  'assets/images/candy.png',
+  'assets/images/amenities.png',
+  'assets/images/vitamin.png',
+  'assets/images/cleaning.png',
+  'assets/images/cooking-tools.png',
 ];
 
 List<Color> categoryColors = [
