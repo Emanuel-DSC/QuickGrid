@@ -45,22 +45,6 @@ class CategoriesCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Visibility(
-                      visible: isVisible,
-                      child: Radio<String>(
-                        activeColor: Colors.green,
-                        value: text,
-                        groupValue:
-                            categorySelectionProvider.selectedCategory,
-                        onChanged: (value) {
-                          categorySelectionProvider
-                              .setSelectedCategory(value!);
-                        },
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

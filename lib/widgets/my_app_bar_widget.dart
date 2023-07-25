@@ -37,7 +37,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           onTap: () {
             Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
-              categoryProvider.resetSelectedCategory();
           } ,
           child: Icon(icon, color: Colors.white,)),
       actions: [

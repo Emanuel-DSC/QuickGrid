@@ -44,6 +44,13 @@ class _AddItemState extends State<AddItem> {
                   ),
                 ),
                 SizedBox(height: kpadding30),
+                const Center(
+                  child: Text('Adicione à uma categoria', 
+                  style: TextStyle(
+                    fontSize: 18, 
+                  ),),
+                ),
+                SizedBox(height: kpadding30),
                 Expanded(
                   child: GridView.builder(
                       gridDelegate:
@@ -66,7 +73,6 @@ class _AddItemState extends State<AddItem> {
                                 categoryMap[name]!,
                                 context
                               );
-                              CategoryProvider().setSelectedCategory(name);
                             }
                           },
                         );

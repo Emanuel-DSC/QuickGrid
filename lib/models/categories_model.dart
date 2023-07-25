@@ -12,16 +12,6 @@ class CategoryProvider extends ChangeNotifier {
   List<int> selectedItems = [];
   DataBase db = DataBase();
 
-  void setSelectedCategory(String category) {
-    selectedCategory = category;
-    notifyListeners();
-  }
-
-  void resetSelectedCategory() {
-    selectedCategory = '';
-    notifyListeners();
-  }
-
   void navigateToCategoriesPage(BuildContext context, String name) {
     Navigator.push(
       context,
