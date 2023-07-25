@@ -39,13 +39,13 @@ class MyBottomNavigation extends StatelessWidget {
               break;
           }
         },
-        items:  [
+        items: const [
           BottomNavigationBarItem(
-            icon: Icon(MyIcon.home, size: 32),
+            icon: Icon(MyIcon.home, size: 24),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(MyIcon.list, size: 32,),
+            icon: Icon(MyIcon.list, size: 24),
             label: '',
           ),
         ],

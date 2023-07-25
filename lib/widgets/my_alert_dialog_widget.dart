@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import '../themes/models/theme_models.dart';
 // ignore: must_be_immutable
 class MyAlertDialog extends StatelessWidget {
   VoidCallback onTap; 
@@ -13,11 +16,15 @@ class MyAlertDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Consumer<ThemeProvider>(
+      builder: (context, themeNotifier, child) {
     return AlertDialog(
-      title: Text('aaa',
+      title: Text('Atenção!'.toUpperCase(),
           style: GoogleFonts.lato(
-              color: Colors.white, fontWeight: FontWeight.bold)),
-      content: Text('aaa', style: GoogleFonts.lato(color: Colors.white)),
+              color: themeNotifier.isDark
+              ? Colors.white : Colors.black, fontWeight: FontWeight.bold)),
+      content: Text('Deseja limpar sua lista ?', style: GoogleFonts.lato(color: themeNotifier.isDark
+              ? Colors.white : Colors.black)),
       actions: [
         TextButton(
           style: TextButton.styleFrom(
@@ -32,11 +39,11 @@ class MyAlertDialog extends StatelessWidget {
             backgroundColor: Colors.red
           ),
           onPressed: onTap2,
-          child: Text('Deletar',
+          child: Text('Limpar',
               style: GoogleFonts.lato(color: Colors.white)),
         ),
       ],
       elevation: 10,
     );
-  }
+  }); }
 }
