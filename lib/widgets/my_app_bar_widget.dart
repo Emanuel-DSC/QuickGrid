@@ -10,17 +10,25 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({super.key, required this.themeNotifier, required this.icon});
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(100);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppBarTheme.of(context).backgroundColor,
       elevation: 0,
-      title: SizedBox(
-        height: 30,
-        child: Image.asset('assets/images/white_logo.png')),
-      centerTitle: true,
+      flexibleSpace: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            top: AppBar().preferredSize.height * 1.1,
+            child: SizedBox(
+              height: 45,
+              child: Image.asset('assets/images/white_logo.png'),
+            ),
+          ),
+        ],
+      ),
       leading: GestureDetector(
           onTap: () => Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage())),
