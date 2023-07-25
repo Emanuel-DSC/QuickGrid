@@ -24,7 +24,6 @@ class _FinalListPageState extends State<FinalListPage> {
       appBar: MyAppBar(
         themeNotifier: themeNotifier,
         icon: null,
-        title: 'lista final'.toUpperCase(),
       ),
       body: listaFinal.isEmpty
           ? const Center(

@@ -4,7 +4,7 @@ class MyThemes {
   static final lightMode = ThemeData.light().copyWith(
     brightness: Brightness.light,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF39b54a),
       elevation: 0,
       shadowColor: Colors.transparent,
     ),
@@ -18,8 +18,8 @@ class MyThemes {
 
   static final darkMode = ThemeData.dark().copyWith(
     brightness: Brightness.dark,
-    appBarTheme: AppBarTheme(
-      backgroundColor: Colors.grey[900]!,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Color(0xFF39b54a),
       elevation: 0,
       shadowColor: Colors.transparent,
     ),

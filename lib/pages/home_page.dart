@@ -27,7 +27,6 @@ class MyHomePageState extends State<HomePage> {
           appBar: MyAppBar(
             themeNotifier: themeNotifier,
             icon: null,
-            title: 'home'.toUpperCase(),
           ),
           body: Padding(
             padding: const EdgeInsets.all(8.0),

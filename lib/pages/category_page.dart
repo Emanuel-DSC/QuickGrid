@@ -39,7 +39,6 @@ class _CategoryPageState extends State<CategoryPage> {
       appBar: MyAppBar(
         themeNotifier: themeNotifier,
         icon: Icons.arrow_back_ios_rounded,
-        title: 'lista final'.toUpperCase(),
       ),
       body: CategoryPage.itemList.isEmpty
           ? const Center(child: Text('Nenhum item adicionado', style: TextStyle(fontSize: 28),))

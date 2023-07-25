@@ -6,9 +6,8 @@ import '../themes/models/theme_models.dart';
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ThemeProvider themeNotifier;
   final IconData? icon;
-  final String title;
 
-  const MyAppBar({super.key, required this.themeNotifier, required this.icon, required this.title});
+  const MyAppBar({super.key, required this.themeNotifier, required this.icon});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -16,17 +15,22 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: AppBarTheme.of(context).backgroundColor,
       elevation: 0,
-      title: Text(title),
+      title: SizedBox(
+        height: 30,
+        child: Image.asset('assets/images/white_logo.png')),
       centerTitle: true,
       leading: GestureDetector(
           onTap: () => Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage())),
-          child: Icon(icon)),
+          child: Icon(icon, color: Colors.white,)),
       actions: [
         IconButton(
+          color: Colors.white,
           icon: Icon(
-              themeNotifier.isDark ? Icons.nightlight_round : Icons.wb_sunny),
+              themeNotifier.isDark ? 
+              Icons.nightlight_round : Icons.wb_sunny),
           onPressed: () {
             themeNotifier.isDark = !themeNotifier.isDark;
           },

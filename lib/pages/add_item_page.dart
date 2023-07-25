@@ -30,7 +30,7 @@ class _AddItemState extends State<AddItem> {
       builder: (context, ThemeProvider themeNotifier, child) {
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.background,
-          appBar: MyAppBar(themeNotifier: themeNotifier, icon: Icons.arrow_back_ios_rounded, title: 'add item'.toUpperCase(),),
+          appBar: MyAppBar(themeNotifier: themeNotifier, icon: Icons.arrow_back_ios_rounded),
           body: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -55,7 +55,6 @@ class _AddItemState extends State<AddItem> {
                       itemBuilder: (BuildContext context, int index) {
                         String name = categorias[index].toString();
                         String imagePath = categoryImagePaths[index];
-                        Color color = categoryColors[index];
                         return CategoriesCard(
                           text: name,
                           image: imagePath,
