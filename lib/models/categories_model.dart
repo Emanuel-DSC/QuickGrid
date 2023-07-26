@@ -86,4 +86,5 @@ class CategoryProvider extends ChangeNotifier {
       },
     );
   }
+
 }

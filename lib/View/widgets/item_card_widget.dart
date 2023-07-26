@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
 
@@ -10,7 +11,7 @@ class ItemCard extends StatelessWidget {
   final String text;
   final int index;
   final VoidCallback deleteFunction;
-  
+
   const ItemCard({
     Key? key,
     required this.text,
@@ -30,11 +31,29 @@ class ItemCard extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(24),
             decoration: BoxDecoration(
-              color: Colors.deepPurple,
+              color: Theme.of(context).colorScheme.secondary,
               borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Text(
+                  text,
+                  style: GoogleFonts.robotoSlab(
+                    decoration: item.completed
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                    fontSize: 22,
+                  ),
+                ),
                 Consumer<CategoryItem>(
                   builder: (context, item, child) {
                     return Checkbox(
@@ -42,17 +61,12 @@ class ItemCard extends StatelessWidget {
                       onChanged: (value) {
                         item.toggleCompleted(item);
                       },
-                      activeColor: Colors.black,
+                      activeColor: Colors.transparent,
+                      checkColor: Colors.green,
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(5))),
                     );
                   },
-                ),
-                Text(
-                  text,
-                  style: TextStyle(
-                    decoration: item.completed
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none,
-                  ),
                 ),
               ],
             ),
