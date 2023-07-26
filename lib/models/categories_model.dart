@@ -49,6 +49,7 @@ class CategoryProvider extends ChangeNotifier {
         context: context,
         builder: (context) {
           return MyAlertDialog(
+            buttonText: 'Excluir', text: 'Deseja excluir o item ?' ,
             onTap: () => Navigator.of(context).pop(),
             onTap2: () {
               final itemToRemove = CategoryPage.itemList[index];
@@ -58,7 +59,7 @@ class CategoryProvider extends ChangeNotifier {
               listaFinal.removeWhere((item) => item.name == itemToRemove.name);
               db.saveDataToStorage();
               db.saveListaFinalToStorage();
-            },
+            }, 
           );
         });
   }
@@ -68,6 +69,7 @@ class CategoryProvider extends ChangeNotifier {
       context: context,
       builder: (context) {
         return MyAlertDialog(
+          buttonText: 'Limpar', text: 'Deseja limpar sua lista ?',
           onTap: () => Navigator.of(context).pop(),
           onTap2: () {
             for (final categoryItems in categoryMap.values) {
@@ -81,7 +83,7 @@ class CategoryProvider extends ChangeNotifier {
             db.saveDataToStorage();
             db.saveListaFinalToStorage();
             Navigator.of(context).popAndPushNamed('/final_list_page');
-          },
+          }, 
         );
       },
     );
