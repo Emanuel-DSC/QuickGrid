@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lista_mercado/models/categories_model.dart';
 import 'package:lista_mercado/themes/models/theme_models.dart';
 import 'package:lista_mercado/widgets/my_app_bar_widget.dart';
@@ -42,10 +43,12 @@ class _AddItemState extends State<AddItem> {
                   ),
                 ),
                 SizedBox(height: kpadding30),
-                const Center(
+                Center(
                   child: Text('Adicione à uma categoria', 
-                  style: TextStyle(
+                  style: GoogleFonts.robotoSlab(
                     fontSize: 18, 
+                    fontWeight: FontWeight.bold,
+                    color: AppBarTheme.of(context).backgroundColor,
                   ),),
                 ),
                 SizedBox(height: kpadding30),

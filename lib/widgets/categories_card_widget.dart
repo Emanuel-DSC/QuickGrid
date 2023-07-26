@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lista_mercado/constants/padding.dart';
 
 
@@ -50,7 +51,7 @@ class CategoriesCard extends StatelessWidget {
           Text(
             text,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14),
+            style: GoogleFonts.robotoSlab(fontWeight: FontWeight.normal, fontSize: 14),
           ),
         ],
       ),
