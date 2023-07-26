@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/bottom_nav_model.dart';
+import '../../models/bottom_nav_model.dart';
 import '../pages/final_list_page.dart';
 import '../pages/home_page.dart';
 import 'my_icon_icons.dart';

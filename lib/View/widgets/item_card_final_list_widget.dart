@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/category_item_model.dart';
+import '../../models/category_item_model.dart';
 
 class ItemCardFinalList extends StatelessWidget {
   final String text;

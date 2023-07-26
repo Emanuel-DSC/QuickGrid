@@ -1,33 +1,34 @@
 import 'package:flutter/material.dart';
 
-sucessMessage(BuildContext context) {
+flashMessage(BuildContext context, itemName, category, Color color, IconData icon,
+    String title, String text) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     content: Container(
-        height: 60,
-        decoration: const BoxDecoration(
-            color: Colors.green,
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+        height: 75,
+        decoration: BoxDecoration(
+            color: color,
+            borderRadius: const BorderRadius.all(Radius.circular(20))),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              const Icon(
-                Icons.check,
+              Icon(
+                icon,
                 color: Colors.white,
                 size: 40,
               ),
               Expanded(
                 child: Column(
-                  children: const [
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
                     Text(
-                      'Sucesso!',
+                      title,
                       textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18, color: Colors.white),
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
                     ),
-                    Spacer(),
                     Text(
-                      'Produto adicionado à categoria.',
-                      style: TextStyle(
+                      text,
+                      style: const TextStyle(
                         fontSize: 15,
                         color: Colors.white,
                       ),

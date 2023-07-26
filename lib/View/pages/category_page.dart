@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/lists.dart';
-import '../database/database.dart';
-import '../models/categories_model.dart';
-import '../models/category_item_model.dart';
-import '../themes/models/theme_models.dart';
+import '../../constants/lists.dart';
+import '../../database/database.dart';
+import '../../models/categories_model.dart';
+import '../../models/category_item_model.dart';
+import '../../themes/models/theme_models.dart';
 import '../widgets/empty_list_widget.dart';
 import '../widgets/item_card_widget.dart';
 import '../widgets/my_app_bar_widget.dart';

@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lista_mercado/models/categories_model.dart';
 import 'package:lista_mercado/themes/models/theme_models.dart';
-import 'package:lista_mercado/widgets/my_app_bar_widget.dart';
 import 'package:provider/provider.dart';
-import '../constants/lists.dart';
-import '../constants/padding.dart';
+import '../../constants/lists.dart';
+import '../../constants/padding.dart';
 import '../widgets/categories_card_widget.dart';
+import '../widgets/my_app_bar_widget.dart';
 import '../widgets/my_textfield_widget.dart';
 
 class AddItem extends StatefulWidget {
@@ -72,7 +72,9 @@ class _AddItemState extends State<AddItem> {
                               CategoryProvider().addItemToList(
                                 controller.text,
                                 categoryMap[name]!,
-                                context
+                                context, 
+                                controller, 
+                                name,
                               );
                             }
                           },

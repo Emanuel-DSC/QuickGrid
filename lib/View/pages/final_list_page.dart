@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:lista_mercado/models/categories_model.dart';
-import 'package:lista_mercado/widgets/item_card_final_list_widget.dart';
-import 'package:lista_mercado/widgets/my_app_bar_widget.dart';
 import 'package:provider/provider.dart';
-import '../constants/lists.dart';
-import '../themes/models/theme_models.dart';
+import '../../constants/lists.dart';
+import '../../themes/models/theme_models.dart';
 import '../widgets/empty_list_widget.dart';
+import '../widgets/item_card_final_list_widget.dart';
+import '../widgets/my_app_bar_widget.dart';
 import '../widgets/my_bottom_nav_bar_widget.dart';
 
 class FinalListPage extends StatefulWidget {
@@ -44,11 +44,14 @@ class _FinalListPageState extends State<FinalListPage> {
                 ),
               ],
             ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => CategoryProvider().reset(context),
-        backgroundColor: Colors.red,
-        foregroundColor: Colors.white,
-        child: const Icon(Icons.clear_rounded),
+      floatingActionButton: Visibility(
+        visible: listaFinal.isEmpty ? false : true,
+        child: FloatingActionButton(
+          onPressed: () => CategoryProvider().reset(context),
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+          child: const Icon(Icons.clear_rounded),
+        ),
       ),
       bottomNavigationBar: const MyBottomNavigation(),
     );

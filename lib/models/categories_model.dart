@@ -1,10 +1,10 @@
 // category_provider.dart
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/widgets/flash_card_widget.dart';
+import '../View/pages/category_page.dart';
+import '../View/widgets/flash_card_widget.dart';
+import '../View/widgets/my_alert_dialog_widget.dart';
 import '../constants/lists.dart';
 import '../database/database.dart';
-import '../pages/category_page.dart';
-import '../widgets/my_alert_dialog_widget.dart';
 import 'category_item_model.dart';
 
 class CategoryProvider extends ChangeNotifier {
@@ -23,12 +23,20 @@ class CategoryProvider extends ChangeNotifier {
     );
   }
 
-  void addItemToList(String value, List<CategoryItem> list, context) {
-    final item = CategoryItem(name: value, category: selectedCategory);
-    list.add(item);
-    notifyListeners();
-    db.saveDataToStorage();
-    sucessMessage(context);
+  void addItemToList(
+      String name, List<CategoryItem> list, context, controller, category) {
+    if (controller.text.isNotEmpty) {
+      final item = CategoryItem(name: name, category: selectedCategory);
+      list.add(item);
+      notifyListeners();
+      db.saveDataToStorage();
+      flashMessage(context, name, category, Colors.green, Icons.check, 'Sucesso!', 
+          '$name adicionado à $category.');
+      controller.clear();
+    } else {
+      flashMessage(context, name, category, Colors.red, Icons.error_rounded, 'Falha!',
+          'Produto não informado. Verifique a caixa de texto.');
+    }
   }
 
   void checkBoxChanged(bool newBool, int index) {
@@ -78,5 +86,4 @@ class CategoryProvider extends ChangeNotifier {
       },
     );
   }
-
 }

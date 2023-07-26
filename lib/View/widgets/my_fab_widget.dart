@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/pages/add_item_page.dart';
+
+import '../pages/add_item_page.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
   const MyFloatingActionButton({

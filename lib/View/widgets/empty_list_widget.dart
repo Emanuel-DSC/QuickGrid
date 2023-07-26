@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants/padding.dart';
+import '../../constants/padding.dart';
+
 
 class EmptyPage extends StatelessWidget {
   String text;

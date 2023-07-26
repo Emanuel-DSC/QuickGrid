@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lista_mercado/pages/home_page.dart';
 
-import '../themes/models/theme_models.dart';
+import '../../themes/models/theme_models.dart';
+import '../pages/home_page.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ThemeProvider themeNotifier;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../constants/lists.dart';
-import '../models/categories_model.dart';
-import '../themes/models/theme_models.dart';
+import '../../constants/lists.dart';
+import '../../models/categories_model.dart';
+import '../../themes/models/theme_models.dart';
 import '../widgets/categories_card_widget.dart';
 import '../widgets/my_app_bar_widget.dart';
 import '../widgets/my_bottom_nav_bar_widget.dart';

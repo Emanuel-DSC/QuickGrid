@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
 
-import '../models/category_item_model.dart';
+import '../../models/category_item_model.dart';
 
 class ItemCard extends StatelessWidget {
   final String text;
