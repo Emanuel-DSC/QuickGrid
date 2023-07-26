@@ -34,7 +34,7 @@ class CategoryProvider extends ChangeNotifier {
           '$name adicionado à $category.');
       controller.clear();
     } else {
-      flashMessage(context, name, category, Colors.red, Icons.error_rounded, 'Falha!',
+      flashMessage(context, name, category, Colors.red, Icons.close, 'Falha!',
           'Produto não informado. Verifique a caixa de texto.');
     }
   }

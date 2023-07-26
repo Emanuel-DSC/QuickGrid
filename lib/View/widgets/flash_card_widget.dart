@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-flashMessage(BuildContext context, itemName, category, Color color, IconData icon,
+flashMessage(BuildContext context, itemName, category, Color color, IconData? icon,
     String title, String text) {
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     content: Container(
-        height: 75,
+        height: 85,
         decoration: BoxDecoration(
             color: color,
             borderRadius: const BorderRadius.all(Radius.circular(20))),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Row(
             children: [
-              Icon(
-                icon,
-                color: Colors.white,
-                size: 40,
-              ),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -24,12 +20,13 @@ flashMessage(BuildContext context, itemName, category, Color color, IconData ico
                     Text(
                       title,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                      style: GoogleFonts.robotoSlab(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       text,
-                      style: const TextStyle(
-                        fontSize: 15,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.robotoSlab(
+                        fontSize: 14,
                         color: Colors.white,
                       ),
                       maxLines: 2,
