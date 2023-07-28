@@ -59,7 +59,7 @@ class ItemCard extends StatelessWidget {
                     return Checkbox(
                       value: item.completed,
                       onChanged: (value) {
-                        item.toggleCompleted(item);
+                        item.toggleCompleted(item, context, index);
                       },
                       activeColor: Colors.transparent,
                       checkColor: Colors.green,
