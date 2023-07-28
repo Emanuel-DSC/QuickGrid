@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lista_mercado/constants/padding.dart';
 import 'package:lista_mercado/models/categories_model.dart';
 import 'package:provider/provider.dart';
 import '../../constants/lists.dart';
@@ -28,21 +30,33 @@ class _FinalListPageState extends State<FinalListPage> {
       ),
       body: listaFinal.isEmpty
           ? EmptyPage(text: 'Nenhum item no carrinho')
-          : Column(
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: listaFinal.length,
-                    itemBuilder: (BuildContext context, index) {
-                      final item = listaFinal[index];
-                      return ItemCardFinalList(
-                        text: item.name,
-                        index: index,
-                      );
-                    },
+          : Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  SizedBox(height: kpadding10),
+                  Text(
+                    'Itens já no carrinho'.toUpperCase(),
+                    style: GoogleFonts.robotoSlab(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                      color: Colors.grey[700],
+                    ),
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: listaFinal.length,
+                      itemBuilder: (BuildContext context, index) {
+                        final item = listaFinal[index];
+                        return ItemCardFinalList(
+                          text: item.name,
+                          index: index,
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
       floatingActionButton: Visibility(
         visible: listaFinal.isEmpty ? false : true,

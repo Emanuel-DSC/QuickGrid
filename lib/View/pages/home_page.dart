@@ -29,7 +29,7 @@ class MyHomePageState extends State<HomePage> {
             icon: null,
           ),
           body: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 8.0, bottom: 40),
             child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 320,
