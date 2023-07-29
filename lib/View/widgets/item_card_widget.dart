@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lista_mercado/constants/padding.dart';
 import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
 
@@ -50,15 +51,18 @@ class ItemCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  text,
-                  style: GoogleFonts.robotoSlab(
-                    decoration: item.completed
-                        ? TextDecoration.lineThrough
-                        : TextDecoration.none,
-                    fontSize: 22,
+                Expanded(
+                  child: Text(
+                    text,
+                    style: GoogleFonts.robotoSlab(
+                      decoration: item.completed
+                          ? TextDecoration.lineThrough
+                          : TextDecoration.none,
+                      fontSize: 22,
+                    ),
                   ),
                 ),
+                SizedBox(width: kpadding10),
                 Consumer<CategoryItem>(
                   builder: (context, item, child) {
                     return Checkbox(
