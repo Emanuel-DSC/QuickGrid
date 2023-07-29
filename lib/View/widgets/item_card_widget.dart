@@ -6,17 +6,20 @@ import 'package:provider/provider.dart';
 import 'package:swipe_to/swipe_to.dart';
 
 import '../../models/category_item_model.dart';
+import '../../themes/models/theme_models.dart';
 
 class ItemCard extends StatelessWidget {
   final String text;
   final int index;
   final VoidCallback deleteFunction;
+  final ThemeProvider themeNotifier;
 
   const ItemCard({
     Key? key,
     required this.text,
     required this.index,
     required this.deleteFunction,
+    required this.themeNotifier,
   }) : super(key: key);
 
   @override
@@ -35,10 +38,12 @@ class ItemCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
+                  color: themeNotifier.isDark
+                      ? Theme.of(context).colorScheme.primary.withOpacity(0.5)
+                      : Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: const Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),

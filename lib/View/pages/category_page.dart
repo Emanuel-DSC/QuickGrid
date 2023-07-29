@@ -59,6 +59,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                 return ItemCard(
                                   text: item.name,
                                   index: index,
+                                  themeNotifier: themeNotifier,
                                   deleteFunction: () =>
                                       provider.deleteTask(index, context),
                                 );

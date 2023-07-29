@@ -51,6 +51,7 @@ class _FinalListPageState extends State<FinalListPage> {
                         return ItemCardFinalList(
                           text: item.name,
                           index: index,
+                          themeNotifier: themeNotifier,
                         );
                       },
                     ),

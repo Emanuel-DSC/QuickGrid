@@ -5,15 +5,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/category_item_model.dart';
+import '../../themes/models/theme_models.dart';
 
 class ItemCardFinalList extends StatelessWidget {
   final String text;
   final int index;
+  final ThemeProvider themeNotifier;
 
   const ItemCardFinalList({
     Key? key,
     required this.text,
     required this.index,
+    required this.themeNotifier,
   }) : super(key: key);
 
   @override
@@ -28,10 +31,10 @@ class ItemCardFinalList extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
+                  color: themeNotifier.isDark? Theme.of(context).colorScheme.primary.withOpacity(0.5) : Theme.of(context).colorScheme.tertiary.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: const Offset(0, 3), // changes position of shadow
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
