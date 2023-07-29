@@ -32,14 +32,17 @@ class CategoriesCard extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               child: Stack(
                 children: [
-                  Container(
-                    height: 125,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.0),
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage(image),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 125,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(image),
+                        ),
                       ),
                     ),
                   ),

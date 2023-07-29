@@ -41,11 +41,17 @@ class MyBottomNavigation extends StatelessWidget {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(MyIcon.home, size: 24),
+            icon: Padding(
+              padding: EdgeInsets.only(top: 16.0),
+              child: Icon(MyIcon.home),
+            ),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(MyIcon.list, size: 24),
+            icon: Padding(
+              padding: EdgeInsets.only(top: 16.0),
+              child: Icon(MyIcon.list),
+            ),
             label: '',
           ),
         ],

@@ -16,7 +16,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
 
     return AppBar(
-      backgroundColor: AppBarTheme.of(context).backgroundColor,
+      backgroundColor: themeNotifier.isDark? Theme.of(context).colorScheme.primary : AppBarTheme.of(context).backgroundColor,
       elevation: 0,
       flexibleSpace: Stack(
         alignment: Alignment.center,

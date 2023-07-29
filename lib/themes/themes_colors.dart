@@ -26,7 +26,7 @@ class MyThemes {
     colorScheme: ColorScheme.dark(
       background: Colors.grey[900]!,
       primary: const Color(0xFF1a1a1a),
-      secondary: const Color(0xFFf5f6fb),
+      secondary: Colors.grey[850]!,
       tertiary: const Color(0xFFcdd2db),
     ),
   );
