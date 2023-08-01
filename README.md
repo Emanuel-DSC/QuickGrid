@@ -32,11 +32,10 @@
 <br>
 
 ## About this Project
-Introducing our shopping assistant app! This handy application helps you during your shopping journeys. It creates categorized item lists for easy item retrieval and allows you to check off items you've already purchased, saving the list for the next month to avoid re-adding everything. Developed with the purpose of studying state management in Flutter using Provider, it offers a seamless shopping experience. Happy shopping! 🛒📱 
-<br>
+Introducing our grocery shopping assistant app! This handy application aids you during your supermarket trips. It creates categorized item lists for easy retrieval and allows you to check off purchased items, saving the list for the next month to avoid re-adding everything. Developed with the purpose of studying state management in Flutter using Provider, it offers a seamless grocery shopping experience. Happy shopping! 🛒📱
 
 ## Why ? 
-As I progressed in my studies, I felt the need to delve into state management, and I chose Provider. Moreover, I was looking for a way to optimize my time during shopping trips, so I decided to kill two birds with one stone.
+As I progressed in my studies, I felt the need to delve into state management, and I chose Provider as my go-to solution. Additionally, I was looking for a way to optimize my time during end-of-month grocery shopping, so I decided to combine the useful with the enjoyable.
 <br>
 
 ## Reach me out 
