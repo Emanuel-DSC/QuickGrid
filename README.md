@@ -39,5 +39,5 @@ As I progressed in my studies, I felt the need to delve into state management, a
 <br>
 
 ## Reach me out 
-* email: emanuelldsc@gmail.com <br>
-* linkedin: https://www.linkedin.com/in/emanuel-da-silva-costa/
+* Email: emanuelldsc@gmail.com <br>
+* LinkedIn: https://www.linkedin.com/in/emanuel-da-silva-costa/
