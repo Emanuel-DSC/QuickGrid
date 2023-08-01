@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lista_mercado/constants/text.dart';
 
 import '../../constants/padding.dart';
 
@@ -21,7 +22,7 @@ class EmptyPage extends StatelessWidget {
         children: [
           Center(
               child: Text(
-            'Oops!',
+            kOopsText,
             textAlign: TextAlign.center,
             style: GoogleFonts.robotoSlab(
               fontSize: 28,

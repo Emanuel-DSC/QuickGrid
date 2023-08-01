@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../constants/lists.dart';
+import '../../constants/text.dart';
 import '../../database/database.dart';
 import '../../models/categories_model.dart';
 import '../../models/category_item_model.dart';
@@ -42,7 +43,7 @@ class _CategoryPageState extends State<CategoryPage> {
         icon: Icons.arrow_back_ios_rounded,
       ),
       body: CategoryPage.itemList.isEmpty
-          ? EmptyPage(text: 'Nenhum item adicionado')
+          ? EmptyPage(text: kNoItemAddedText)
           : Consumer<CategoryProvider>(
               builder: (context, categoryProvider, child) {
                 return Column(

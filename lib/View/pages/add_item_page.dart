@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lista_mercado/constants/text.dart';
 import 'package:lista_mercado/models/categories_model.dart';
 import 'package:lista_mercado/themes/models/theme_models.dart';
 import 'package:provider/provider.dart';
@@ -39,12 +40,12 @@ class _AddItemState extends State<AddItem> {
                   child: TextFieldWidget(
                     controller: controller,
                     keyboardType: TextInputType.name,
-                    hintText: 'Nome do produto',
+                    hintText: kProductsNameText,
                   ),
                 ),
                 SizedBox(height: kpadding30),
                 Center(
-                  child: Text('Adicione à uma categoria', 
+                  child: Text(kAddToCategoryText, 
                   style: GoogleFonts.robotoSlab(
                     fontSize: 18, 
                     fontWeight: FontWeight.bold,

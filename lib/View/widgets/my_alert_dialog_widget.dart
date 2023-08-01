@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lista_mercado/constants/text.dart';
 import 'package:provider/provider.dart';
 
 import '../../themes/models/theme_models.dart';
@@ -23,7 +24,7 @@ class MyAlertDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(builder: (context, themeNotifier, child) {
       return AlertDialog(
-        title: Text('Atenção!'.toUpperCase(),
+        title: Text(kAtencaoText.toUpperCase(),
             style: GoogleFonts.lato(
                 color: themeNotifier.isDark ? Colors.white : Colors.black,
                 fontWeight: FontWeight.bold)),
@@ -35,7 +36,7 @@ class MyAlertDialog extends StatelessWidget {
             style: TextButton.styleFrom(backgroundColor: Colors.grey),
             onPressed: onTap,
             child:
-                Text('Cancelar', style: GoogleFonts.lato(color: Colors.white)),
+                Text(kCancelarText, style: GoogleFonts.lato(color: Colors.white)),
           ),
           TextButton(
             style: TextButton.styleFrom(backgroundColor: Colors.red),

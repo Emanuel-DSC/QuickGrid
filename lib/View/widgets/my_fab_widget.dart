@@ -14,7 +14,7 @@ class MyFloatingActionButton extends StatelessWidget {
             .transparency, 
         child: Ink(
           decoration: BoxDecoration(
-            border: Border.all(color: Color.fromARGB(255, 202, 250, 209).withOpacity(0.7), width: 8.0),
+            border: Border.all(color: const Color.fromARGB(255, 202, 250, 209).withOpacity(0.7), width: 8.0),
             color: const Color(0xFF39b54a),
             shape: BoxShape.circle,
           ),
