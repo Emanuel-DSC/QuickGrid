@@ -1,13 +1,50 @@
 # QuickGrid
 
-### Media
-
-* Video link: https://www.youtube.com/watch?v=vXjdDk4aGa0
-
 <div>
   <img align="center" src="https://github.com/Emanuel-DSC/QuickGrid/assets/61395660/e4008fdc-f235-4416-880e-fcddbf587a41.png" alt="Cover" width="auto%" height="auto"/>
 </div>
 <br>
+
+## About this Project
+Introducing our grocery shopping assistant app! This handy application aids you during your supermarket trips. It creates categorized item lists for easy retrieval and allows you to check off purchased items, saving the list for the next month to avoid re-adding everything. Developed with the purpose of studying state management in Flutter using Provider, it offers a seamless grocery shopping experience. Happy shopping! 🛒📱
+
+## Why ? 
+As I progressed in my studies, I felt the need to delve into state management, and I chose Provider as my go-to solution. Additionally, I was looking for a way to optimize my time during end-of-month grocery shopping, so I decided to combine the useful with the enjoyable.
+<br>
+
+## Project Structure
+```bash
+lib/
+├── view/                              # pages and widgets
+|   ├── pages                          # every app's screens
+|   |   └── add_item_page.dart
+|   |      ...
+|   ├── widgets                        # every custom widget
+|   |   └── categories_card_widget.dart
+|          ...
+├── constants/                         # constants values 
+|   └── lists.dart
+|        ...
+├── database/                          # storage functions
+|   └── database.dart
+├── models/                            # items models
+|   └── bottom_nav_model.dart
+|        ...
+├── themes/                            # Shared colors, dark / light mode
+|   ├── models/ 
+|   |   └── theme_models.dart          # Theme model
+|   └── theme_preferences.dart
+|   └── themes_colors.dart
+├── main.dart                          # Heart of the app
+```
+## Features
+
+- Create different lists based on type of the product
+- Save for next time without the need of create it all again from scratch
+
+### Media
+
+* Video link: https://www.youtube.com/watch?v=vXjdDk4aGa0
 
 * Light mode   
 <br>
@@ -29,13 +66,6 @@
   <img src="https://github.com/Emanuel-DSC/QuickGrid/assets/61395660/0b44eacd-6c20-439e-86df-1d28cd392ea0.jpg" alt="FinalListDark" width="19%" height="auto"/>
   <img src="https://github.com/Emanuel-DSC/QuickGrid/assets/61395660/d61f610e-2ea4-4cc4-906b-aebc8aa41e3b" alt="ListEmptyDark" width="19%" height="auto"/>
 </div>
-<br>
-
-## About this Project
-Introducing our grocery shopping assistant app! This handy application aids you during your supermarket trips. It creates categorized item lists for easy retrieval and allows you to check off purchased items, saving the list for the next month to avoid re-adding everything. Developed with the purpose of studying state management in Flutter using Provider, it offers a seamless grocery shopping experience. Happy shopping! 🛒📱
-
-## Why ? 
-As I progressed in my studies, I felt the need to delve into state management, and I chose Provider as my go-to solution. Additionally, I was looking for a way to optimize my time during end-of-month grocery shopping, so I decided to combine the useful with the enjoyable.
 <br>
 
 ## Reach me out 
