@@ -26,7 +26,7 @@ lib/
 |   └── lists.dart
 |        ...
 ├── database/                          # storage functions
-|   └── database.dart
+|   └── database.dart                  # local storage (get_storage)
 ├── models/                            # items models
 |   └── bottom_nav_model.dart
 |        ...
